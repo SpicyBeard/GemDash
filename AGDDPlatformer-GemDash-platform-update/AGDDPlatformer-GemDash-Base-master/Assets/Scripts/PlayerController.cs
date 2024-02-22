@@ -23,6 +23,13 @@ namespace AGDDPlatformer
         bool canDash;
         bool wantsToDash;
 
+        [Header("Slam")]
+        Vector2 slamDirection;
+        public bool canSlam;
+        public bool isSlaming;
+        bool wantsToSlam;
+
+
         [Header("Audio")]
         public AudioSource source;
         public AudioClip jumpSound;
@@ -92,6 +99,48 @@ namespace AGDDPlatformer
             if (Input.GetButtonDown("Dash"))
             {
                 wantsToDash = true;
+            }
+
+            // Clamp directional input to downward for slam
+            Vector2 desiredSlamDirection = new Vector2(
+                move.x == 0 ? 0 : (move.x > 0 ? 1 : -1),
+                move.y == 0 ? 0 : (move.y > 0 ? 1 : -1));
+            if (desiredSlamDirection == Vector2.zero)
+            {
+                // Slam downward 
+                desiredSlamDirection = Vector2.down;
+
+            }
+            desiredSlamDirection = desiredSlamDirection.normalized;
+            if (Input.GetButtonDown("Dash"))
+            {
+                wantsToSlam = true;
+            }
+
+            if (canSlam && wantsToSlam)
+            {
+                isSlaming = true;
+                slamDirection = desiredSlamDirection;
+                canSlam = false;
+                gravityModifier = 0;
+
+                source.PlayOneShot(dashSound);
+            }
+
+            if(isSlaming)
+            {
+                velocity = slamDirection * dashSpeed;
+                if (Time.time - lastDashTime >= dashTime)
+                {
+                    isSlaming = false;
+
+                    gravityModifier = defaultGravityModifier;
+                    if ((gravityModifier >= 0 && velocity.y > 0) ||
+                        (gravityModifier < 0 && velocity.y < 0))
+                    {
+                        velocity.y *= jumpDeceleration;
+                    }
+                }
             }
 
             /* --- Compute Velocity --- */
@@ -198,6 +247,11 @@ namespace AGDDPlatformer
         public void ResetDash()
         {
             canDash = true;
+        }
+
+        public void ResetSlam()
+        {
+            canSlam = true;
         }
 
         //Add a short mid-air boost to the player (unrelated to dash). Will be reset upon landing.
