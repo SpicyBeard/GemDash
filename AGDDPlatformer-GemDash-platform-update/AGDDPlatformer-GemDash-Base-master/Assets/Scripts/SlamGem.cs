@@ -36,6 +36,7 @@ namespace AGDDPlatformer
                 isActive = false;
                 lastCollected = Time.time;
                 activeIndicator.SetActive(false);
+                // playerController.
                 source.Play();
             }
         }

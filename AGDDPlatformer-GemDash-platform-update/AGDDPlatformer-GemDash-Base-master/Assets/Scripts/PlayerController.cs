@@ -20,7 +20,7 @@ namespace AGDDPlatformer
         float lastDashTime;
         Vector2 dashDirection;
         bool isDashing;
-        bool canDash;
+        public bool canDash;
         bool wantsToDash;
 
         [Header("Slam")]
@@ -28,6 +28,7 @@ namespace AGDDPlatformer
         public bool canSlam;
         public bool isSlaming;
         bool wantsToSlam;
+        public Color canSlamColor;
 
 
         [Header("Audio")]
@@ -102,9 +103,7 @@ namespace AGDDPlatformer
             }
 
             // Clamp directional input to downward for slam
-            Vector2 desiredSlamDirection = new Vector2(
-                move.x == 0 ? 0 : (move.x > 0 ? 1 : -1),
-                move.y == 0 ? 0 : (move.y > 0 ? 1 : -1));
+            Vector2 desiredSlamDirection = new Vector2();
             if (desiredSlamDirection == Vector2.zero)
             {
                 // Slam downward 
@@ -112,7 +111,7 @@ namespace AGDDPlatformer
 
             }
             desiredSlamDirection = desiredSlamDirection.normalized;
-            if (Input.GetButtonDown("Dash"))
+            if (Input.GetButtonDown("Slam"))
             {
                 wantsToSlam = true;
             }
@@ -128,10 +127,10 @@ namespace AGDDPlatformer
             }
 
             if(isSlaming)
-            {
+            {   
+                //make player slam down at a faster speed
                 velocity = slamDirection * dashSpeed;
-                if (Time.time - lastDashTime >= dashTime)
-                {
+                
                     isSlaming = false;
 
                     gravityModifier = defaultGravityModifier;
@@ -140,8 +139,10 @@ namespace AGDDPlatformer
                     {
                         velocity.y *= jumpDeceleration;
                     }
-                }
+                spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
+                
             }
+
 
             /* --- Compute Velocity --- */
 
@@ -250,7 +251,8 @@ namespace AGDDPlatformer
         }
 
         public void ResetSlam()
-        {
+        {   
+            canDash = false;
             canSlam = true;
         }
 
