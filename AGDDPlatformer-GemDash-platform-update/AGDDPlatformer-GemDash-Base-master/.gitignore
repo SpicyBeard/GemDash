@@ -48,7 +48,9 @@ ExportedObj/
 *.VC.db
 *.vscode/
 *UserSettings/
-
+*AGDDPlatformer-GemDash-platform-update\AGDDPlatformer-GemDash-Base-master\AGDDPlatformer-GemDash-Base-master.sln
+*Assembly-CSharp.csproj
+*AGDDPlatformer-GemDash-platform-update\AGDDPlatformer-GemDash-Base-master\Logs
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
