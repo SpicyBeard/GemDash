@@ -20,8 +20,16 @@ namespace AGDDPlatformer
         float lastDashTime;
         Vector2 dashDirection;
         bool isDashing;
-        bool canDash;
+        public bool canDash;
         bool wantsToDash;
+
+        [Header("Slam")]
+        Vector2 slamDirection;
+        public bool canSlam;
+        public bool isSlaming;
+        bool wantsToSlam;
+        public Color canSlamColor;
+
 
         [Header("Audio")]
         public AudioSource source;
@@ -93,6 +101,48 @@ namespace AGDDPlatformer
             {
                 wantsToDash = true;
             }
+
+            // Clamp directional input to downward for slam
+            Vector2 desiredSlamDirection = new Vector2();
+            if (desiredSlamDirection == Vector2.zero)
+            {
+                // Slam downward 
+                desiredSlamDirection = Vector2.down;
+
+            }
+            desiredSlamDirection = desiredSlamDirection.normalized;
+            if (Input.GetButtonDown("Slam"))
+            {
+                wantsToSlam = true;
+            }
+
+            if (canSlam && wantsToSlam)
+            {
+                isSlaming = true;
+                slamDirection = desiredSlamDirection;
+                canSlam = false;
+                gravityModifier = 0;
+
+                source.PlayOneShot(dashSound);
+            }
+
+            if(isSlaming)
+            {   
+                //make player slam down at a faster speed
+                velocity = slamDirection * dashSpeed;
+                
+                    isSlaming = false;
+
+                    gravityModifier = defaultGravityModifier;
+                    if ((gravityModifier >= 0 && velocity.y > 0) ||
+                        (gravityModifier < 0 && velocity.y < 0))
+                    {
+                        velocity.y *= jumpDeceleration;
+                    }
+                spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
+                
+            }
+
 
             /* --- Compute Velocity --- */
 
@@ -198,6 +248,12 @@ namespace AGDDPlatformer
         public void ResetDash()
         {
             canDash = true;
+        }
+
+        public void ResetSlam()
+        {   
+            canDash = false;
+            canSlam = true;
         }
 
         //Add a short mid-air boost to the player (unrelated to dash). Will be reset upon landing.
