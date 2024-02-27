@@ -152,7 +152,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   isGrounded: 0
   isFrozen: 0
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!50 &42070146
 Rigidbody2D:
   serializedVersion: 4
