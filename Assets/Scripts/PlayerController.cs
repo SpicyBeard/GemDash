@@ -29,12 +29,15 @@ namespace AGDDPlatformer
         public bool isSlaming;
         bool wantsToSlam;
         public Color canSlamColor;
+        public Color cantSlamColor;
+        public bool canBounce;
 
 
         [Header("Audio")]
         public AudioSource source;
         public AudioClip jumpSound;
         public AudioClip dashSound;
+        public AudioClip slamSound;
 
         Vector2 startPosition;
         bool startOrientation;
@@ -101,7 +104,6 @@ namespace AGDDPlatformer
             {
                 wantsToDash = true;
             }
-
             // Clamp directional input to downward for slam
             Vector2 desiredSlamDirection = new Vector2();
             if (desiredSlamDirection == Vector2.zero)
@@ -115,31 +117,33 @@ namespace AGDDPlatformer
             {
                 wantsToSlam = true;
             }
-
+            // Debug.Log(wantsToSlam);
             if (canSlam && wantsToSlam)
             {
                 isSlaming = true;
                 slamDirection = desiredSlamDirection;
                 canSlam = false;
                 gravityModifier = 0;
-
                 source.PlayOneShot(dashSound);
             }
 
+            wantsToSlam = false;
             if(isSlaming)
             {   
                 //make player slam down at a faster speed
                 velocity = slamDirection * dashSpeed;
-                
-                    isSlaming = false;
+                canBounce = true;
 
                     gravityModifier = defaultGravityModifier;
                     if ((gravityModifier >= 0 && velocity.y > 0) ||
                         (gravityModifier < 0 && velocity.y < 0))
                     {
-                        velocity.y *= jumpDeceleration;
+                        velocity.y *= 4* jumpDeceleration;
                     }
-                spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
+                spriteRenderer.color = canSlamColor;
+                Debug.Log("Slamming");
+                //if player is grounded, reset slam
+                isSlaming = false;
                 
             }
 
@@ -254,6 +258,8 @@ namespace AGDDPlatformer
         {   
             canDash = false;
             canSlam = true;
+            spriteRenderer.color = canSlamColor;
+
         }
 
         //Add a short mid-air boost to the player (unrelated to dash). Will be reset upon landing.

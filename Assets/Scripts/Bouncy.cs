@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AGDDPlatformer;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bouncy : MonoBehaviour
 {   
@@ -23,23 +24,35 @@ public class Bouncy : MonoBehaviour
            void OnTriggerEnter2D(Collider2D other)
         {
             
-            PlayerController playerController = other.GetComponentInParent<PlayerController>();
+         PlayerController playerController = other.GetComponentInParent<PlayerController>();
             if (playerController != null)
-            {
-                playerController.ResetSlam();
-                playerController.ResetDash();
-                // playerController.
-                }
-                
-            //if player is slaming and collides with the bouncy object
-            if (playerController!= null && playerController.isSlaming )
-            {
-                //bounce the player
-                if(this.gameObject.GetComponent<BoxCollider2D>().IsTouching(playerController.GetComponent<BoxCollider2D>()))
+            {   
+                Debug.Log("Bouncy");
+                if(playerController.canBounce)
                 {
-                playerController.velocity.y += playerController.jumpSpeed * 3;
+                Debug.Log("Bouncing!");
+                playerController.canDash = false;
                 source.Play();
-                }
+                Vector2 desiredBounceDirection = new Vector2();
+                //bounce upward
+                desiredBounceDirection = Vector2.up;
+                playerController.velocity = ((desiredBounceDirection * playerController.dashSpeed)/2); 
+                playerController.velocity.y += playerController.jumpSpeed;
+                playerController.velocity.y -= Time.deltaTime;
+                //playerController.canDash = true;
+                // }
+                    
+
+
+            // if (desiredBounceDirection == Vector2.zero)
+            // {
+                
+            //     desiredBounceDirection = Vector2.up;
+            //     playerController.velocity = desiredBounceDirection * playerController.dashSpeed;
+            //     playerController.velocity.y += playerController.jumpSpeed;
+
+                playerController.canBounce= false;
+            }
             }
         }
 
