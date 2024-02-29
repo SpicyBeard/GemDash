@@ -1,14 +1,20 @@
 using UnityEngine;
+using System.Collections;
 
 public class Laser : MonoBehaviour
 {
     public LayerMask layersToHit;
     private LineRenderer lineRenderer;
+    public Transform playerTransform; // Assign this in the inspector with the player's Transform
+    public Vector2 respawnLocation; // Set this to where you want the player to respawn
+    public AudioClip hitSound; // Assign this in the inspector
+    private AudioSource audioSource; // To play the sound
+    private bool soundPlayed = false;
 
     void Start()
     {
-        // Get the LineRenderer component attached to this GameObject
         lineRenderer = GetComponent<LineRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -16,42 +22,81 @@ public class Laser : MonoBehaviour
         ShootLaser();
     }
 
-
-void ShootLaser()
-{
-    // Calculate the direction based on the laser's orientation
-    float angle = transform.eulerAngles.z * Mathf.Deg2Rad;
-    Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-    // Perform the raycast
-    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 100f, layersToHit);
-
-    // Always set the first position of the line to be the laser's starting point
-    lineRenderer.SetPosition(0, transform.position);
-
-    if (hit.collider != null)
+    void ShootLaser()
     {
-        // If the raycast hits something, set the end of the laser to the hit point
-        lineRenderer.SetPosition(1, hit.point);
+        float angle = transform.eulerAngles.z * Mathf.Deg2Rad;
+        Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 100f, layersToHit);
+        lineRenderer.SetPosition(0, transform.position);
 
-        // Check if the hit object has the tag "Player"
-        if (hit.collider.CompareTag("Player1"))
+        if (hit.collider != null)
         {
-            // Perform your action here
-            Debug.Log("Player Hit");
-            
-            // Example actions:
-            // - Reduce player health
-            // - Trigger a hit animation on the player
-            // - Play a sound effect
+            lineRenderer.SetPosition(1, hit.point);
+            if (hit.collider.CompareTag("Player1"))
+            {
+                StartCoroutine(PlayerHitActions(hit.collider));
+            }
+        }
+        else
+        {
+            lineRenderer.SetPosition(1, transform.position + (Vector3)direction * 100f);
+            soundPlayed = false; // Reset the flag when the laser is not hitting the player
         }
     }
-    else
+
+    IEnumerator PlayerHitActions(Collider2D player)
     {
-        // If nothing is hit, extend the laser to its maximum length in the direction it's facing
-        lineRenderer.SetPosition(1, transform.position + (Vector3)direction * 100f); // Adjust the length as needed
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        if(rb != null)
+        {
+            rb.simulated = false;
+        }
+        // Disable the player's SpriteRenderer
+        SpriteRenderer spriteRenderer = player.GetComponentInChildren<SpriteRenderer>();
+        if(spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+
+        // Enable the player's ParticleSystem
+        ParticleSystem particleSystem = player.GetComponentInChildren<ParticleSystem>();
+        if(particleSystem != null)
+        {
+            particleSystem.Play();
+        }
+
+        // Play a sound effect
+        if (hitSound != null && !soundPlayed)
+        {
+            audioSource.PlayOneShot(hitSound);
+            soundPlayed = true;
+        }
+
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2.5f);
+
+        // Move the player to a specific location
+        player.transform.position = respawnLocation;
+
+        // Re-enable the SpriteRenderer if desired
+        if(spriteRenderer != null)
+        {
+            spriteRenderer.enabled = true;
+        }
+
+        // Optionally stop the ParticleSystem if needed
+        if(particleSystem != null)
+        {
+            particleSystem.Stop();
+            particleSystem.Clear();
+        }
+
+        // Reset the Rigidbody simulation if it was disabled
+        if(rb != null)
+        {
+            rb.simulated = true;
+        }
+
+        soundPlayed = false;
     }
 }
-
-    }
-
