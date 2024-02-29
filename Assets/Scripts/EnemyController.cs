@@ -1,50 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-namespace AGDDPlatformer
+
+public class EnemyController : MonoBehaviour
 {
-public class EnemyController : KinematicObject
+    public Transform startPoint;  // Starting point of the movement
+    public Transform endPoint;    // End point of the movement
+    public float moveSpeed = 5f;  // Speed at which the enemy moves
+
+    private Transform currentTarget; // Current target the enemy is moving towards
+    private SpriteRenderer spriteRenderer; // To flip the sprite based on direction
+
+    void Start()
     {
-        public float moveSpeed = 1f; // enemy speed
-        private Rigidbody2D rb; // get rigidbody
-        private bool isFacingRight = true;
-        float defaultGravityModifier;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        currentTarget = endPoint; // Start by moving towards the end point
+    }
 
-        void Awake()
-        {
-            defaultGravityModifier = gravityModifier;
-        }
+    void Update()
+    {
+        MoveTowardsTarget();
+        CheckSwitchTarget();
+    }
 
-        void Start()
+    void MoveTowardsTarget()
+    {
+        if (currentTarget != null)
         {
-            rb = GetComponent<Rigidbody2D>();
-        }
+            // Move the enemy towards the current target
+            transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, moveSpeed * Time.deltaTime);
 
-        void Update()
-        {
-            rb.velocity = new Vector2((isFacingRight ? 1 : -1) * moveSpeed, rb.velocity.y); // move according to direction faced * speed
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Wall")) // flip on wall collide
+            // Flip the sprite based on the direction of movement
+            if (transform.position.x < currentTarget.position.x)
             {
-                Flip();
+                // Moving right
+                spriteRenderer.flipX = false;
+            }
+            else if (transform.position.x > currentTarget.position.x)
+            {
+                // Moving left
+                spriteRenderer.flipX = true;
             }
         }
+    }
 
-        void Flip()
+    void CheckSwitchTarget()
+    {
+        // Switch the current target if the enemy reaches it
+        if (transform.position == currentTarget.position)
         {
-            if(isFacingRight)
-            {
-                isFacingRight = false;
-                transform.Rotate(0f, 180f, 0f);
-            }
-            else if (!isFacingRight)
-            {
-                isFacingRight = true;
-                transform.Rotate(0f, 180f, 0f);
-            }
+            currentTarget = currentTarget == startPoint ? endPoint : startPoint;
         }
     }
 }
