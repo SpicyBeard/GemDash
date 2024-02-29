@@ -3,12 +3,15 @@ using System.Collections;
 
 public class Laser : MonoBehaviour
 {
+    [Header("Layers that laser hits")]
     public LayerMask layersToHit;
     private LineRenderer lineRenderer;
-    public Transform playerTransform; // Assign this in the inspector with the player's Transform
-    public Vector2 respawnLocation; // Set this to where you want the player to respawn
-    public AudioClip hitSound; // Assign this in the inspector
-    private AudioSource audioSource; // To play the sound
+    [Header("Respawn Location")]
+    public Transform playerTransform;
+    public Vector2 respawnLocation; 
+    [Header("Audio")]
+    public AudioClip hitSound;
+    private AudioSource audioSource;
     private bool soundPlayed = false;
 
     void Start()
@@ -40,7 +43,7 @@ public class Laser : MonoBehaviour
         else
         {
             lineRenderer.SetPosition(1, transform.position + (Vector3)direction * 100f);
-            soundPlayed = false; // Reset the flag when the laser is not hitting the player
+            soundPlayed = false;
         }
     }
 
@@ -51,47 +54,37 @@ public class Laser : MonoBehaviour
         {
             rb.simulated = false;
         }
-        // Disable the player's SpriteRenderer
         SpriteRenderer spriteRenderer = player.GetComponentInChildren<SpriteRenderer>();
         if(spriteRenderer != null)
         {
             spriteRenderer.enabled = false;
         }
 
-        // Enable the player's ParticleSystem
         ParticleSystem particleSystem = player.GetComponentInChildren<ParticleSystem>();
         if(particleSystem != null)
         {
             particleSystem.Play();
         }
 
-        // Play a sound effect
         if (hitSound != null && !soundPlayed)
         {
             audioSource.PlayOneShot(hitSound);
             soundPlayed = true;
         }
 
-        // Wait for 2 seconds
         yield return new WaitForSeconds(2.5f);
 
-        // Move the player to a specific location
         player.transform.position = respawnLocation;
 
-        // Re-enable the SpriteRenderer if desired
         if(spriteRenderer != null)
         {
             spriteRenderer.enabled = true;
         }
-
-        // Optionally stop the ParticleSystem if needed
         if(particleSystem != null)
         {
             particleSystem.Stop();
             particleSystem.Clear();
         }
-
-        // Reset the Rigidbody simulation if it was disabled
         if(rb != null)
         {
             rb.simulated = true;
