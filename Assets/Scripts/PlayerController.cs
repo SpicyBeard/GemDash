@@ -146,7 +146,7 @@ namespace AGDDPlatformer
                 isSlaming = false;
                 
             }
-
+            canBounce = false;
 
             /* --- Compute Velocity --- */
 
