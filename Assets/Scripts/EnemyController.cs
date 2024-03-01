@@ -3,31 +3,40 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private AudioSource audioSource;
-    private bool isInitiallyVisible = false; // Assume the enemy is not visible at the start
+    private bool isInitiallyVisible = false;
+    private bool isVisible = false; // Current visibility state of the enemy
+    public Camera cameraUsed;
+    private Renderer renderer;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        // Initially assume the enemy is not visible
-        isInitiallyVisible = GetComponent<Renderer>().isVisible;
+        renderer = GetComponent<Renderer>();
+
+        UpdateVisibility();
+        isInitiallyVisible = isVisible; // Set the initial visibility based on the first check
     }
 
-    void OnBecameVisible()
+    void Update()
     {
-        // Only play audio if the enemy was not initially visible
-        if (!isInitiallyVisible)
+        UpdateVisibility();
+
+        // If the enemy has just become visible and it was not initially visible, play the audio
+        if (isVisible && !isInitiallyVisible)
         {
             audioSource.Play();
-            // After the first play, consider the enemy as initially visible to prevent repeated plays
-            isInitiallyVisible = true;
+            isInitiallyVisible = true; // Prevent the audio from playing again
+        }
+        else if (!isVisible)
+        {
+            // When the enemy is no longer visible, allow for the audio to be played again when it becomes visible
+            isInitiallyVisible = false;
         }
     }
 
-    void OnBecameInvisible()
+    void UpdateVisibility()
     {
-        // When the enemy becomes invisible, reset the isInitiallyVisible flag
-        // This allows the audio to play again next time the enemy becomes visible,
-        // simulating the enemy entering the viewport again
-        isInitiallyVisible = false;
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cameraUsed);
+        isVisible = GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
     }
 }
