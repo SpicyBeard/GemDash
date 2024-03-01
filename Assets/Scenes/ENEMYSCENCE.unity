@@ -265,7 +265,12 @@ PrefabInstance:
     - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: nextLevel
-      value: Level2
+      value: Dadimakelevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: timeStopped
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4691332085974933203, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -466,6 +471,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: m_text
+      value: Slime Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
