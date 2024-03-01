@@ -294,4 +294,6 @@ namespace AGDDPlatformer
             this.jumpBoost = jumpBoost;
         }
     }
+
+    
 }
