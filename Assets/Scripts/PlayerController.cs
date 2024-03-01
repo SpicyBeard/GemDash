@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace AGDDPlatformer
 {
@@ -29,8 +30,8 @@ namespace AGDDPlatformer
         public bool isSlaming;
         bool wantsToSlam;
         public Color canSlamColor;
-        public Color cantSlamColor;
         public bool canBounce;
+        public float startSlam;
 
 
         [Header("Audio")]
@@ -53,6 +54,7 @@ namespace AGDDPlatformer
 
         Vector2 jumpBoost;
 
+
         void Awake()
         {
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -63,6 +65,14 @@ namespace AGDDPlatformer
             startOrientation = spriteRenderer.flipX;
 
             defaultGravityModifier = gravityModifier;
+        }
+        
+        IEnumerator SlamDelay(){
+            gravityModifier = 0;
+
+            Debug.Log("Slam Delay");
+            yield return new WaitForSeconds(1.0f);
+            
         }
 
         void Update()
@@ -128,9 +138,14 @@ namespace AGDDPlatformer
             }
 
             wantsToSlam = false;
+            GetComponent<TrailRenderer>().enabled = false;
             if(isSlaming)
             {   
-                //make player slam down at a faster speed
+                startSlam = Time.time;
+                isFrozen = true;
+                StartCoroutine(SlamDelay());
+                isFrozen = false;
+                GetComponent<TrailRenderer>().enabled = true;
                 velocity = slamDirection * dashSpeed;
                 canBounce = true;
 
@@ -138,15 +153,16 @@ namespace AGDDPlatformer
                     if ((gravityModifier >= 0 && velocity.y > 0) ||
                         (gravityModifier < 0 && velocity.y < 0))
                     {
-                        velocity.y *= 4* jumpDeceleration;
+                        velocity.y /= 4* jumpDeceleration;
                     }
                 spriteRenderer.color = canSlamColor;
                 Debug.Log("Slamming");
                 //if player is grounded, reset slam
                 isSlaming = false;
+                                    
                 
+                //make player slam down at a faster speed
             }
-            canBounce = false;
 
             /* --- Compute Velocity --- */
 
@@ -180,7 +196,9 @@ namespace AGDDPlatformer
             else
             {
                 if (isGrounded)
-                {
+                {   
+                    canBounce = false;
+
                     // Store grounded time to allow for late jumps
                     lastGroundedTime = Time.time;
                     canJump = true;
@@ -235,8 +253,15 @@ namespace AGDDPlatformer
             {
                 spriteRenderer.flipX = true;
             }
+            if(canSlam){
+                Debug.Log("I can slam color");
+                // spriteRenderer.color = canSlamColor;
+                spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
+            }
+            else{
+                spriteRenderer.color = canDash ? canDashColor : cantDashColor;
 
-            spriteRenderer.color = canDash ? canDashColor : cantDashColor;
+            }
         }
 
         public void ResetPlayer()
@@ -250,7 +275,9 @@ namespace AGDDPlatformer
         }
 
         public void ResetDash()
-        {
+        {   
+            canSlam = false;
+            canBounce = false;
             canDash = true;
         }
 
@@ -258,7 +285,6 @@ namespace AGDDPlatformer
         {   
             canDash = false;
             canSlam = true;
-            spriteRenderer.color = canSlamColor;
 
         }
 

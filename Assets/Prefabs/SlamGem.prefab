@@ -11,22 +11,22 @@ PrefabInstance:
     - target: {fileID: 145553869082119158, guid: 8f5b452a722246d4d92d7ab9e88d1775,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.085172676
+      value: 0.08184399
       objectReference: {fileID: 0}
     - target: {fileID: 145553869082119158, guid: 8f5b452a722246d4d92d7ab9e88d1775,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.12851863
+      value: 0.41214687
       objectReference: {fileID: 0}
     - target: {fileID: 145553869082119158, guid: 8f5b452a722246d4d92d7ab9e88d1775,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.6226415
+      value: 0.78867924
       objectReference: {fileID: 0}
     - target: {fileID: 145553870935749410, guid: 8f5b452a722246d4d92d7ab9e88d1775,
         type: 3}
       propertyPath: m_Name
-      value: DashGem (3) Variant
+      value: SlamGem
       objectReference: {fileID: 0}
     - target: {fileID: 145553870935749411, guid: 8f5b452a722246d4d92d7ab9e88d1775,
         type: 3}

@@ -39,18 +39,6 @@ public class Bouncy : MonoBehaviour
                 playerController.velocity = ((desiredBounceDirection * playerController.dashSpeed)/2); 
                 playerController.velocity.y += playerController.jumpSpeed;
                 playerController.velocity.y -= Time.deltaTime;
-                //playerController.canDash = true;
-                // }
-                    
-
-
-            // if (desiredBounceDirection == Vector2.zero)
-            // {
-                
-            //     desiredBounceDirection = Vector2.up;
-            //     playerController.velocity = desiredBounceDirection * playerController.dashSpeed;
-            //     playerController.velocity.y += playerController.jumpSpeed;
-
                 playerController.canBounce= false;
             }
             }
