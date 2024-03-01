@@ -88,6 +88,7 @@ public class Laser : MonoBehaviour
         if(rb != null)
         {
             rb.simulated = true;
+            player.transform.localScale = new Vector3(1, 1, 1);
         }
 
         soundPlayed = false;
