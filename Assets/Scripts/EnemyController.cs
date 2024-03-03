@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using AGDDPlatformer;
+using UnityEditor.Experimental.GraphView;
 
 public class EnemyController : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class EnemyController : MonoBehaviour
         private Renderer renderer;
 
     [Header("Audio")]
+        public AudioClip hitSound;
+        private bool eatSoundPlayed = false;
+
 
         private AudioSource audioSource;
 
@@ -55,26 +59,71 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player1"))
         {
-            Vector2 normal = collision.contacts[0].normal;
-            float angle = Vector2.Angle(normal, Vector2.up);
-
-            if (angle < 45)
-            {
-                /*
-                Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-
-                if (playerRb)
-                {
-                    playerRb.velocity = Vector2.up * bounceVelocity;
-                }
-                */
-            }
-            else
-            {
-                collision.transform.position = respawnLocation;
-            }
+            StartCoroutine(HandleCollision(collision)); // Start the coroutine
         }
     }
+
+    IEnumerator HandleCollision(Collision2D collision)
+    {
+        Vector2 normal = collision.contacts[0].normal;
+        float angle = Vector2.Angle(normal, Vector2.up);
+
+        if (angle < 45)
+        {
+            // boing haha
+            yield break; // Exit the coroutine early if the angle is less than 45
+        }
+        else
+        {
+            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                playerRb.simulated = false;
+            }
+
+            SpriteRenderer spriteRenderer = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = false;
+            }
+
+            ParticleSystem particleSystem = collision.gameObject.GetComponentInChildren<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+
+            if (hitSound != null && !eatSoundPlayed)
+            {
+                audioSource.PlayOneShot(hitSound);
+                eatSoundPlayed = true;
+            }
+
+            yield return new WaitForSeconds(1.5f); // Wait for 1.5 seconds
+
+            collision.transform.position = respawnLocation;
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = true;
+            }
+
+            if (particleSystem != null)
+            {
+                particleSystem.Stop();
+                particleSystem.Clear();
+            }
+
+            if (playerRb != null)
+            {
+                playerRb.simulated = true;
+                playerRb.transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            eatSoundPlayed = false;
+        }
+    }
+
 
     void UpdateVisibility()
     {

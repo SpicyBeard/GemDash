@@ -238,6 +238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4896aabd01b2c21448d3abcd8ce46930, type: 3}
+    - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
       propertyPath: cameraUsed
       value: 
       objectReference: {fileID: 377869631}
@@ -249,12 +254,12 @@ PrefabInstance:
     - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: respawnLocation.x
-      value: 0
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: respawnLocation.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6267637702361842721, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
