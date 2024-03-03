@@ -9,10 +9,12 @@ public class EnemyController : MonoBehaviour
         public Transform playerTransform;
         public Vector2 respawnLocation; 
 
-    [Header("Enemy Visibility")]
+    [Header("Enemy shit")]
 
         private bool isInitiallyVisible = false;
         private bool isVisible = false; // Current visibility state of the enemy
+        public float bounceForce = 5f;
+        public float bounceVelocity = 5f;
 
     [Header("Camera Shit")]
 
@@ -50,16 +52,34 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+void OnCollisionEnter2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Player1")) // Ensure the tag matches your player GameObject
     {
-        // Check if the colliding object is the player
-        if (collision.gameObject.CompareTag("Player")) // Make sure your player GameObject is tagged as "Player"
+        Vector2 normal = collision.contacts[0].normal;
+        float angle = Vector2.Angle(normal, Vector2.up);
+
+        // Check if the collision is on top of the enemy
+        if (angle < 45) // Adjust the angle threshold as needed
         {
-            // Access the PlayerController component on the player GameObject
-            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            collision.transform.position = respawnLocation; // Ensure respawnLocation is accessible here, possibly by making it public/static or referencing it from another script
+            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>(); // Get the player's Rigidbody2D
+
+            if (playerRb)
+            {
+                // Directly modify the velocity for the bounce effect, suitable for kinematic Rigidbody2Ds
+                playerRb.velocity = Vector2.up * bounceVelocity; // Make sure to define and adjust bounceVelocity as needed
+            }
         }
     }
+    else
+    {
+        // If the collision is not with the player, or it's not on top of the enemy, handle the "death" logic
+        // This else block seems misplaced as it will trigger for any non-player collision; you might want to adjust this logic
+        collision.transform.position = respawnLocation; // Teleport the colliding object to the respawn location
+    }
+}
+
+
 
     void UpdateVisibility()
     {
