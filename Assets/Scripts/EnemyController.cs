@@ -49,37 +49,32 @@ public class EnemyController : MonoBehaviour
             // When the enemy is no longer visible, allow for the audio to be played again when it becomes visible
             isInitiallyVisible = false;
         }
-
     }
 
-void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Player1")) // Ensure the tag matches your player GameObject
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 normal = collision.contacts[0].normal;
-        float angle = Vector2.Angle(normal, Vector2.up);
-
-        // Check if the collision is on top of the enemy
-        if (angle < 45) // Adjust the angle threshold as needed
+        if (collision.gameObject.CompareTag("Player1"))
         {
-            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>(); // Get the player's Rigidbody2D
+            Vector2 normal = collision.contacts[0].normal;
+            float angle = Vector2.Angle(normal, Vector2.up);
 
-            if (playerRb)
+            if (angle < 45)
             {
-                // Directly modify the velocity for the bounce effect, suitable for kinematic Rigidbody2Ds
-                playerRb.velocity = Vector2.up * bounceVelocity; // Make sure to define and adjust bounceVelocity as needed
+                /*
+                Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+                if (playerRb)
+                {
+                    playerRb.velocity = Vector2.up * bounceVelocity;
+                }
+                */
+            }
+            else
+            {
+                collision.transform.position = respawnLocation;
             }
         }
     }
-    else
-    {
-        // If the collision is not with the player, or it's not on top of the enemy, handle the "death" logic
-        // This else block seems misplaced as it will trigger for any non-player collision; you might want to adjust this logic
-        collision.transform.position = respawnLocation; // Teleport the colliding object to the respawn location
-    }
-}
-
-
 
     void UpdateVisibility()
     {
