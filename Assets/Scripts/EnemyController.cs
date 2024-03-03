@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using AGDDPlatformer;
-using UnityEditor.Experimental.GraphView;
 
 public class EnemyController : MonoBehaviour
 {
@@ -23,17 +21,16 @@ public class EnemyController : MonoBehaviour
         private Renderer renderer;
 
     [Header("Audio")]
-        public AudioClip hitSound;
+
+        public AudioClip slimeSound;
+        public AudioClip eatSound;
         private bool eatSoundPlayed = false;
-
-
         private AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         renderer = GetComponent<Renderer>();
-
         UpdateVisibility();
         isInitiallyVisible = isVisible; // Set the initial visibility based on the first check
     }
@@ -45,7 +42,7 @@ public class EnemyController : MonoBehaviour
         // If the enemy has just become visible and it was not initially visible, play the audio
         if (isVisible && !isInitiallyVisible)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(slimeSound);
             isInitiallyVisible = true; // Prevent the audio from playing again
         }
         else if (!isVisible)
@@ -65,43 +62,50 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator HandleCollision(Collision2D collision)
     {
+        Debug.Log("Collision Handling Started");
+
         Vector2 normal = collision.contacts[0].normal;
         float angle = Vector2.Angle(normal, Vector2.up);
 
         if (angle < 45)
         {
-            // boing haha
-            yield break; // Exit the coroutine early if the angle is less than 45
+            Debug.Log("boing haha");
         }
         else
         {
+            Debug.Log("else statement started");
+            
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+
             if (playerRb != null)
             {
                 playerRb.simulated = false;
             }
 
             SpriteRenderer spriteRenderer = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
+
             if (spriteRenderer != null)
             {
                 spriteRenderer.enabled = false;
             }
 
             ParticleSystem particleSystem = collision.gameObject.GetComponentInChildren<ParticleSystem>();
+
             if (particleSystem != null)
             {
                 particleSystem.Play();
             }
 
-            if (hitSound != null && !eatSoundPlayed)
+            if (eatSound != null && !eatSoundPlayed)
             {
-                audioSource.PlayOneShot(hitSound);
+                audioSource.PlayOneShot(eatSound);
                 eatSoundPlayed = true;
             }
 
             yield return new WaitForSeconds(1.5f); // Wait for 1.5 seconds
 
-            collision.transform.position = respawnLocation;
+            collision.gameObject.transform.position = respawnLocation;
+            Debug.Log("Respawning player at: " + respawnLocation);
 
             if (spriteRenderer != null)
             {
@@ -117,7 +121,7 @@ public class EnemyController : MonoBehaviour
             if (playerRb != null)
             {
                 playerRb.simulated = true;
-                playerRb.transform.localScale = new Vector3(1, 1, 1);
+                playerRb.transform.localScale = new Vector2(1, 1);
             }
 
             eatSoundPlayed = false;
