@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class LaserSmall : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class LaserSmall : MonoBehaviour
     [Header("Audio")]
     public AudioClip hitSound;
     private AudioSource audioSource;
-    private bool soundPlayed = false;
+    public bool soundPlayed = true;
     [Header("Player Size Adjustment")]
     public float newScale = 0.5f; // The new scale you want to apply to the player
 
@@ -35,17 +36,27 @@ public class LaserSmall : MonoBehaviour
         if (hit.collider != null)
         {
             lineRenderer.SetPosition(1, hit.point);
-            if (hit.collider.CompareTag("Player1") && !soundPlayed)
+            if (hit.collider.CompareTag("Player1") || hit.collider.CompareTag("Enemy"))
             {
                 hit.collider.transform.localScale = new Vector3(newScale, newScale, newScale);
-                audioSource.PlayOneShot(hitSound);
-                soundPlayed = true;
+                
+                StartCoroutine(ResetSound());
             }
         }
         else
         {
             lineRenderer.SetPosition(1, transform.position + (Vector3)direction * 100f);
             soundPlayed = false; // Reset soundPlayed flag when not hitting player
+        }
+    }
+    IEnumerator ResetSound()
+    {   
+        if(soundPlayed != false)
+        {
+            soundPlayed = false;
+            audioSource.PlayOneShot(hitSound);
+            yield return new WaitForSeconds(2f);
+            soundPlayed = true; 
         }
     }
 
