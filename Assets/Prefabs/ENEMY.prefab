@@ -248,7 +248,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: Infinity
+  m_Time: 30
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -345,7 +345,10 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   respawnLocation: {x: 0, y: 0}
   bounceForce: 5
+  bounceVelocity: 5
   cameraUsed: {fileID: 0}
+  slimeSound: {fileID: 0}
+  eatSound: {fileID: 0}
 --- !u!1 &862532590685423517
 GameObject:
   m_ObjectHideFlags: 0

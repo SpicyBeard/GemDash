@@ -56,76 +56,58 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player1"))
         {
-            StartCoroutine(HandleCollision(collision)); // Start the coroutine
+            StartCoroutine(PlayerHitActions(collision.collider));
         }
     }
 
-    IEnumerator HandleCollision(Collision2D collision)
+    IEnumerator PlayerHitActions(Collider2D player)
     {
-        Debug.Log("Collision Handling Started");
-
-        Vector2 normal = collision.contacts[0].normal;
-        float angle = Vector2.Angle(normal, Vector2.up);
-
-        if (angle < 45)
+        // Play the eat sound when the player is hit
+        if (eatSound != null && !eatSoundPlayed)
         {
-            Debug.Log("boing haha");
+            audioSource.PlayOneShot(eatSound);
+            eatSoundPlayed = true;
         }
-        else
+
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
-            Debug.Log("else statement started");
-            
-            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-
-            if (playerRb != null)
-            {
-                playerRb.simulated = false;
-            }
-
-            SpriteRenderer spriteRenderer = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
-
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = false;
-            }
-
-            ParticleSystem particleSystem = collision.gameObject.GetComponentInChildren<ParticleSystem>();
-
-            if (particleSystem != null)
-            {
-                particleSystem.Play();
-            }
-
-            if (eatSound != null && !eatSoundPlayed)
-            {
-                audioSource.PlayOneShot(eatSound);
-                eatSoundPlayed = true;
-            }
-
-            yield return new WaitForSeconds(1.5f); // Wait for 1.5 seconds
-
-            collision.gameObject.transform.position = respawnLocation;
-            Debug.Log("Respawning player at: " + respawnLocation);
-
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = true;
-            }
-
-            if (particleSystem != null)
-            {
-                particleSystem.Stop();
-                particleSystem.Clear();
-            }
-
-            if (playerRb != null)
-            {
-                playerRb.simulated = true;
-                playerRb.transform.localScale = new Vector2(1, 1);
-            }
-
-            eatSoundPlayed = false;
+            rb.simulated = false;
         }
+
+        SpriteRenderer spriteRenderer = player.GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+
+        ParticleSystem particleSystem = player.GetComponentInChildren<ParticleSystem>();
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
+        }
+
+        yield return new WaitForSeconds(1.5f); // Adjust the delay as needed
+
+        player.transform.position = respawnLocation;
+        Debug.Log("Respawning player at: " + respawnLocation);
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = true;
+        }
+        if (particleSystem != null)
+        {
+            particleSystem.Stop();
+            particleSystem.Clear();
+        }
+        if (rb != null)
+        {
+            rb.simulated = true;
+            player.transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        eatSoundPlayed = false; // Reset the flag for the next collision
     }
 
 
