@@ -4,28 +4,23 @@ using System.Collections;
 public class EnemyController : MonoBehaviour
 {
     [Header("Respawn Location")]
+    public Transform playerTransform;
+    public Vector2 respawnLocation; 
 
-        public Transform playerTransform;
-        public Vector2 respawnLocation; 
+    [Header("Enemy Behavior")]
+    private bool isInitiallyVisible = false;
+    private bool isVisible = false; // Current visibility state of the enemy
+    public float bounceForce = 100f;
 
-    [Header("Enemy shit")]
-
-        private bool isInitiallyVisible = false;
-        private bool isVisible = false; // Current visibility state of the enemy
-        public float bounceForce = 5f;
-        public float bounceVelocity = 5f;
-
-    [Header("Camera Shit")]
-
-        public Camera cameraUsed;
-        private Renderer renderer;
+    [Header("Camera Settings")]
+    public Camera cameraUsed;
+    private Renderer renderer;
 
     [Header("Audio")]
-
-        public AudioClip slimeSound;
-        public AudioClip eatSound;
-        private bool eatSoundPlayed = false;
-        private AudioSource audioSource;
+    public AudioClip slimeSound;
+    public AudioClip eatSound;
+    private bool eatSoundPlayed = false;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -52,11 +47,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Player1"))
+        if (collider.CompareTag("Player1"))
         {
-            StartCoroutine(PlayerHitActions(collision.collider));
+            StartCoroutine(PlayerHitActions(collider));
         }
     }
 
@@ -110,6 +105,19 @@ public class EnemyController : MonoBehaviour
         eatSoundPlayed = false; // Reset the flag for the next collision
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            Debug.Log("Bounce Logic");
+
+            Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            Vector2 bounceDirection = (collision.transform.position - transform.position).normalized;
+
+            playerRigidbody.AddForce(bounceDirection * bounceForce, ForceMode2D.Impulse);
+        }
+    }
 
     void UpdateVisibility()
     {
