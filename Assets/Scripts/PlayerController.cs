@@ -260,6 +260,7 @@ namespace AGDDPlatformer
                 Debug.Log("I can slam color");
                 // spriteRenderer.color = canSlamColor;
                 spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
+
             }
             else{
                 spriteRenderer.color = canDash ? canDashColor : cantDashColor;

@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ENEMYSCENCE.unity
     guid: f310f835eaf1d4648a0e3e2262718194
   - enabled: 1
-    path: Assets/Scenes/Dadimakelevel.unity
+    path: Assets/Scenes/SlamLevel1.unity
     guid: f953614e33882984eb5a9b17a656b98a
   - enabled: 1
     path: Assets/Scenes/LaserLevel1.unity
