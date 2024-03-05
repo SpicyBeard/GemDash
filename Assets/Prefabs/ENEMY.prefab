@@ -301,7 +301,6 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   respawnLocation: {x: 0, y: 0}
   bounceForce: 5
-  bounceVelocity: 5
   cameraUsed: {fileID: 0}
   slimeSound: {fileID: 0}
   eatSound: {fileID: 0}
@@ -334,7 +333,7 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -396,7 +395,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.027583122, y: 0.6243392}
