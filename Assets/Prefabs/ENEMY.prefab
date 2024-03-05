@@ -306,7 +306,6 @@ MonoBehaviour:
   cameraUsed: {fileID: 0}
   slimeSound: {fileID: 8300000, guid: e96340911bc01f14383a938faad731bc, type: 3}
   eatSound: {fileID: 8300000, guid: 74ebd67c60601e84ba54bfeb5cd3fcdd, type: 3}
-  edgeCollider2d: {fileID: 1687891134844432758}
 --- !u!68 &1687891134844432758
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -555,6 +554,7 @@ GameObject:
   - component: {fileID: 5546351698619142044}
   - component: {fileID: 3685875624082777353}
   - component: {fileID: 7837679626123667394}
+  - component: {fileID: 8514825660368413956}
   m_Layer: 8
   m_Name: Bouncyness
   m_TagString: Untagged
@@ -591,7 +591,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   source: {fileID: 3685875624082777353}
-  boxCollider2D: {fileID: 7837679626123667394}
 --- !u!82 &3685875624082777353
 AudioSource:
   m_ObjectHideFlags: 0
@@ -733,3 +732,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8207226, y: 0.67624164}
   m_EdgeRadius: 0
+--- !u!50 &8514825660368413956
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312888451020937355}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
