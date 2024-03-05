@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     private bool eatSoundPlayed = false;
     private AudioSource audioSource;
 
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
