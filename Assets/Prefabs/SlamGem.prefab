@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeIndicator: {fileID: 27042189398880892}
-  cooldown: 1
+  cooldown: 3
   source: {fileID: 2736999382694525964}
 --- !u!1 &27042189398880892 stripped
 GameObject:

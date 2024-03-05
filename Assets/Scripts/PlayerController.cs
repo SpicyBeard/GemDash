@@ -125,7 +125,9 @@ namespace AGDDPlatformer
             desiredSlamDirection = desiredSlamDirection.normalized;
             if (Input.GetButtonDown("Slam"))
             {
+                if(Input.GetAxis("Vertical") < 0){
                 wantsToSlam = true;
+                }
             }
             // Debug.Log(wantsToSlam);
             if (canSlam && wantsToSlam)
@@ -159,6 +161,7 @@ namespace AGDDPlatformer
                 Debug.Log("Slamming");
                 //if player is grounded, reset slam
                 isSlaming = false;
+                
                                     
                 
                 //make player slam down at a faster speed
@@ -257,6 +260,7 @@ namespace AGDDPlatformer
                 Debug.Log("I can slam color");
                 // spriteRenderer.color = canSlamColor;
                 spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
+
             }
             else{
                 spriteRenderer.color = canDash ? canDashColor : cantDashColor;
@@ -270,6 +274,7 @@ namespace AGDDPlatformer
             spriteRenderer.flipX = startOrientation;
 
             lastJumpTime = -jumpBufferTime * 2;
+            canSlam = false;
 
             velocity = Vector2.zero;
         }
