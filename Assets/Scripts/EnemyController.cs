@@ -110,12 +110,13 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player1"))
         {
             Debug.Log("Bounce Logic");
-
+        /*
             Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
 
             Vector2 bounceDirection = (collision.transform.position - transform.position).normalized;
 
             playerRigidbody.AddForce(bounceDirection * bounceForce, ForceMode2D.Impulse);
+        */          
         }
     }
 
