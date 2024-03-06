@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layersToHit:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4864
   playerTransform: {fileID: 0}
   respawnLocation: {x: -1.75, y: 2}
   hitSound: {fileID: 8300000, guid: 8c7254df1f0223747a758202e4058bd3, type: 3}
