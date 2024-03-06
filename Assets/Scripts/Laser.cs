@@ -97,7 +97,6 @@ public class Laser : MonoBehaviour
         {
             rb.simulated = true;
             player.transform.localScale = new Vector3(1, 1, 1);
-            playerController.canSlam= false;
         }
         soundPlayed = false;
     }
