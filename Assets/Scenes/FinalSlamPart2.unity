@@ -4716,7 +4716,7 @@ PrefabInstance:
     - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: nextLevel
-      value: FianlSlamPart3
+      value: FinalSlamPart3
       objectReference: {fileID: 0}
     - target: {fileID: 4691332085998625986, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -4726,7 +4726,7 @@ PrefabInstance:
     - target: {fileID: 4691332085998625991, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086602504073, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -4751,7 +4751,7 @@ PrefabInstance:
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.70388985
+      value: -0.21898842
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -4821,7 +4821,7 @@ PrefabInstance:
     - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_text
-      value: SlamLevel
+      value: Level 9
       objectReference: {fileID: 0}
     - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
