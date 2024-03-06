@@ -536,6 +536,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1594149133 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3685875624082777353, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1692134967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1692134967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -619,6 +625,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5546351698619142044, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1594149133}
     - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: eatSound
@@ -639,6 +650,16 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1323280449}
+    - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -3.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 1.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7837679626123667394, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: m_Size.x
@@ -691,7 +712,7 @@ PrefabInstance:
         type: 3}
       propertyPath: slamSound
       value: 
-      objectReference: {fileID: 8300000, guid: 0a22540611d2d1845b0f0dcc70812078, type: 3}
+      objectReference: {fileID: 8300000, guid: ab7730ff8a00d9048bc2a3f1cba130b7, type: 3}
     - target: {fileID: 2653386272220273286, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: canSlamColor.a

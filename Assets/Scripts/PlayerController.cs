@@ -136,6 +136,7 @@ namespace AGDDPlatformer
                 slamDirection = desiredSlamDirection;
                 canSlam = false;
                 gravityModifier = 0;
+                //source.PlayOneShot(slamSound);
             }
 
             wantsToSlam = false;
@@ -158,6 +159,7 @@ namespace AGDDPlatformer
                     }
                 spriteRenderer.color = canSlamColor;
                 Debug.Log("Slamming");
+                
                 //if player is grounded, reset slam
                 isSlaming = false;
                 
@@ -256,7 +258,7 @@ namespace AGDDPlatformer
                 spriteRenderer.flipX = true;
             }
             if(canSlam){
-                Debug.Log("I can slam color");
+                //Debug.Log("I can slam color");
                 // spriteRenderer.color = canSlamColor;
                 spriteRenderer.color = canSlam ? canSlamColor : cantDashColor;
 
