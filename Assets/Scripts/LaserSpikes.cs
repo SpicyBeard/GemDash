@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using AGDDPlatformer;
 
 public class LaserSpikes : MonoBehaviour
 {
@@ -18,13 +19,16 @@ public class LaserSpikes : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+       
+
 
     // Detect collision with the edge collider
     void OnCollisionEnter2D(Collision2D collision)
-    {
+    {   
         if (collision.collider.CompareTag("Player1"))
         {
             StartCoroutine(PlayerHitActions(collision.collider));
+
         }
     }
 
@@ -41,7 +45,11 @@ public class LaserSpikes : MonoBehaviour
         {
             spriteRenderer.enabled = false;
         }
-
+        PlayerController playerController = player.GetComponentInParent<PlayerController>();
+        if(playerController != null)
+        {
+            playerController.canSlam = false;
+        }
         ParticleSystem particleSystem = player.GetComponentInChildren<ParticleSystem>();
         if(particleSystem != null)
         {
@@ -72,7 +80,6 @@ public class LaserSpikes : MonoBehaviour
             rb.simulated = true;
             player.transform.localScale = new Vector3(1, 1, 1);
         }
-
         soundPlayed = false;
     }
 }
