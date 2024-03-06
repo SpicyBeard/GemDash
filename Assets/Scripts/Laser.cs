@@ -15,10 +15,17 @@ public class Laser : MonoBehaviour
     private AudioSource audioSource;
     private bool soundPlayed = false;
 
+    private PlayerController playerController;
+
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+        void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
     }
 
     void Update()
@@ -32,13 +39,13 @@ public class Laser : MonoBehaviour
         Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 100f, layersToHit);
         lineRenderer.SetPosition(0, transform.position);
-
         if (hit.collider != null)
         {
             lineRenderer.SetPosition(1, hit.point);
             if (hit.collider.CompareTag("Player1"))
             {
                 StartCoroutine(PlayerHitActions(hit.collider));
+
             }
         }
         else
@@ -50,6 +57,10 @@ public class Laser : MonoBehaviour
 
     IEnumerator PlayerHitActions(Collider2D player)
     {
+        if(player != null){
+            player.GetComponentInParent<PlayerController>().canSlam = false;
+
+        }
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         if(rb != null)
         {
@@ -90,8 +101,8 @@ public class Laser : MonoBehaviour
         {
             rb.simulated = true;
             player.transform.localScale = new Vector3(1, 1, 1);
+            playerController.canSlam= false;
         }
-
         soundPlayed = false;
     }
 }
