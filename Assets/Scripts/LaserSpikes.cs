@@ -54,7 +54,7 @@ public class LaserSpikes : MonoBehaviour
             soundPlayed = true;
         }
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
 
         player.transform.position = respawnLocation;
 

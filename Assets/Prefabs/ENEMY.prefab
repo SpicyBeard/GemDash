@@ -304,8 +304,8 @@ MonoBehaviour:
   respawnLocation: {x: 0, y: 0}
   bounceForce: 5
   cameraUsed: {fileID: 0}
-  slimeSound: {fileID: 8300000, guid: e96340911bc01f14383a938faad731bc, type: 3}
-  eatSound: {fileID: 8300000, guid: 74ebd67c60601e84ba54bfeb5cd3fcdd, type: 3}
+  slimeSound: {fileID: 8300000, guid: ba9cab94c25137441bee097dc16acc9d, type: 3}
+  eatSound: {fileID: 8300000, guid: 9a76b2280072f214e8e498699e86badd, type: 3}
 --- !u!68 &1687891134844432758
 EdgeCollider2D:
   m_ObjectHideFlags: 0

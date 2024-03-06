@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using AGDDPlatformer;
 
 public class Laser : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class Laser : MonoBehaviour
             soundPlayed = true;
         }
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
 
         player.transform.position = respawnLocation;
 
