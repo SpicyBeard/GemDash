@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using AGDDPlatformer;
 
 public class EnemyController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour
     public AudioClip eatSound;
     private bool eatSoundPlayed = false;
     private AudioSource audioSource;
+    
 
 
     void Start()
@@ -29,7 +31,9 @@ public class EnemyController : MonoBehaviour
         renderer = GetComponent<Renderer>();
         UpdateVisibility();
         isInitiallyVisible = isVisible; // Set the initial visibility based on the first check
+    
     }
+
 
     void Update()
     {
@@ -51,14 +55,17 @@ public class EnemyController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player1"))
-        {
+        {   
+            collider.GetComponentInParent<PlayerController>().canSlam = false;
             StartCoroutine(PlayerHitActions(collider));
+
         }
     }
 
     IEnumerator PlayerHitActions(Collider2D player)
     {
         // Play the eat sound when the player is hit
+        //PlayerController player = GetComponent<PlayerController>();
         if (eatSound != null && !eatSoundPlayed)
         {
             audioSource.PlayOneShot(eatSound);
@@ -102,7 +109,6 @@ public class EnemyController : MonoBehaviour
             rb.simulated = true;
             player.transform.localScale = new Vector3(1, 1, 1);
         }
-
         eatSoundPlayed = false; // Reset the flag for the next collision
     }
 
