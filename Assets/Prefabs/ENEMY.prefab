@@ -604,13 +604,13 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ab7730ff8a00d9048bc2a3f1cba130b7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: -1.16
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 2.25
+  DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -647,7 +647,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.276
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -677,7 +677,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.577
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
