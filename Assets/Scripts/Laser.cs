@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using AGDDPlatformer;
 
 public class Laser : MonoBehaviour
 {
