@@ -171,12 +171,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -233,6 +248,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserSpikes (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -254,12 +314,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -315,6 +390,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserSpikes (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -521,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -731,12 +851,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -793,6 +928,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserSpikes (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -814,12 +994,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -876,6 +1071,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserSpikes (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -907,7 +1147,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -1575,12 +1815,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1636,6 +1891,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserSpikes (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1745,7 +2045,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -1823,12 +2123,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1884,6 +2199,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserSpikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1989,7 +2349,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2077,7 +2437,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2155,12 +2515,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2217,6 +2592,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserSpikes (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2248,7 +2668,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2404,7 +2824,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2492,7 +2912,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 4864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2644,12 +3064,27 @@ PrefabInstance:
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.x
-      value: -13
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 1197769402908162447, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: respawnLocation.y
       value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2705,6 +3140,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaserSpikes (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.x
+      value: -13.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: respawnLocation.y
+      value: 22.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
+        type: 3}
+      propertyPath: layersToHit.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2867,7 +3347,7 @@ PrefabInstance:
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.0869904
+      value: -7.3857727
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
