@@ -15,7 +15,6 @@ public class Laser : MonoBehaviour
     private AudioSource audioSource;
     private bool soundPlayed = false;
 
-    private PlayerController playerController;
 
     void Start()
     {
@@ -23,10 +22,7 @@ public class Laser : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-        void Awake()
-    {
-        playerController = GetComponent<PlayerController>();
-    }
+
 
     void Update()
     {

@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
     private bool eatSoundPlayed = false;
     private AudioSource audioSource;
     
-    private PlayerController playerController;
 
 
     void Start()
@@ -34,10 +33,7 @@ public class EnemyController : MonoBehaviour
         isInitiallyVisible = isVisible; // Set the initial visibility based on the first check
     
     }
-    void Awake()
-    {
-        playerController = GetComponent<PlayerController>();
-    }
+
 
     void Update()
     {
