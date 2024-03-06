@@ -19,7 +19,11 @@ namespace AGDDPlatformer
         private Points GoingTowards = Points.End;
 
         void Update()
-        {
+        {   
+
+            //if(Points.Start || Points.End){
+                
+          //  }
             //Move the platform back and forth between the start and end points
             Vector2 startToEnd = EndPoint.position - StartPoint.position;
             Vector2 progressToEnd = EndPoint.position - transform.position;
@@ -47,6 +51,7 @@ namespace AGDDPlatformer
         {
             var otherBody = other.gameObject.GetComponent<KinematicObject>();
             if (otherBody == null) { return; }
+
 
             //Attatch if something is grounded on the platform
             if (otherBody.GetGroundedOnObject() == gameObject)
