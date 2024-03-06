@@ -21,9 +21,9 @@ namespace AGDDPlatformer
         void Update()
         {   
 
-            if(Points.Start || Points.End){
+            //if(Points.Start || Points.End){
                 
-            }
+          //  }
             //Move the platform back and forth between the start and end points
             Vector2 startToEnd = EndPoint.position - StartPoint.position;
             Vector2 progressToEnd = EndPoint.position - transform.position;
