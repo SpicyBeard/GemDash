@@ -2272,6 +2272,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4691332086569201668}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1323280450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2653386272220273286, guid: 1d096467bd11505479937aff780e5cd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4691332086569201668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b1ccccdcd9b31408a1afe5dda4df7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1363124788 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4691332086608218235, guid: 1d096467bd11505479937aff780e5cd2,
@@ -2902,6 +2914,11 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1323280449}
+    - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1323280450}
     - target: {fileID: 5980237695741297927, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: respawnLocation.x
@@ -3656,7 +3673,7 @@ PrefabInstance:
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.65185356
+      value: 0.6864834
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
