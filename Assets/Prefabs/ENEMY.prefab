@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1687891134844432758}
   - component: {fileID: 8995220935865872268}
   - component: {fileID: 23672504250973120}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: ENEMY
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5487262643357700428}
   - component: {fileID: 8001998828074402202}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square512
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 3685875624082777353}
   - component: {fileID: 7837679626123667394}
   - component: {fileID: 8514825660368413956}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bouncyness
   m_TagString: Untagged
   m_Icon: {fileID: 0}

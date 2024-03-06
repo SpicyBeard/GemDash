@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layersToHit:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4864
   playerTransform: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 0a22540611d2d1845b0f0dcc70812078, type: 3}
   soundPlayed: 1
