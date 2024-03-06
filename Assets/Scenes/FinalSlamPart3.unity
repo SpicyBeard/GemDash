@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 924314790542254354, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: isGrounded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924314790542254354, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
