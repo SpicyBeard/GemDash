@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class Bouncy : MonoBehaviour
 {   
         public float cooldown = 1;
-        public AudioSource source;
+        private AudioSource audioSource;
+        public AudioClip bounceSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //get the player controller
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -32,7 +34,6 @@ public class Bouncy : MonoBehaviour
                 {
                 Debug.Log("Bouncing!");
                 playerController.canDash = false;
-                source.Play();
                 Vector2 desiredBounceDirection = new Vector2();
                 //bounce upward
                 desiredBounceDirection = Vector2.up;
@@ -40,8 +41,9 @@ public class Bouncy : MonoBehaviour
                 playerController.velocity.y += playerController.jumpSpeed;
                 playerController.velocity.y -= Time.deltaTime;
                 playerController.canBounce= false;
+                audioSource.PlayOneShot(bounceSound);
+                }
             }
             }
         }
 
-}

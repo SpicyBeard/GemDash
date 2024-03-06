@@ -136,7 +136,6 @@ namespace AGDDPlatformer
                 slamDirection = desiredSlamDirection;
                 canSlam = false;
                 gravityModifier = 0;
-                source.PlayOneShot(dashSound);
             }
 
             wantsToSlam = false;
