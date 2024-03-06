@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 93919936}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.83, y: -6.35, z: -0.1087048}
+  m_LocalPosition: {x: 1.83, y: -6.002, z: -0.1087048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -191,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -276,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -434,7 +434,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -485,6 +485,21 @@ PrefabInstance:
       propertyPath: gravityModifier
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1435980418947670236, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.98333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435980418947670236, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435980418947670236, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000484
+      objectReference: {fileID: 0}
     - target: {fileID: 5125587936824545048, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -498,12 +513,12 @@ PrefabInstance:
     - target: {fileID: 5125587936824545048, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.53
+      value: 35.56
       objectReference: {fileID: 0}
     - target: {fileID: 5125587936824545048, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.83
+      value: -6.38
       objectReference: {fileID: 0}
     - target: {fileID: 5125587936824545048, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
@@ -578,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 7837679626123667394, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.51910144
+      value: 0.5379005
       objectReference: {fileID: 0}
     - target: {fileID: 7837679626123667394, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
@@ -588,7 +603,17 @@ PrefabInstance:
     - target: {fileID: 7837679626123667394, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.372784
+      value: 0.38218352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514825660368413956, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514825660368413956, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
+        type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8995220935865872268, guid: 91fd66d9c4667aa4f8ab3020950bb49d,
         type: 3}
@@ -641,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -829,7 +854,7 @@ Transform:
   m_GameObject: {fileID: 725413556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.87, y: -6.35, z: -0.1087048}
+  m_LocalPosition: {x: 36.1, y: -5.997, z: -0.1087048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -871,7 +896,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -941,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -956,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -971,7 +996,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1014,7 +1039,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1084,7 +1109,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1099,7 +1124,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1114,7 +1139,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1147,7 +1172,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -1835,7 +1860,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1905,7 +1930,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1920,7 +1945,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -1935,7 +1960,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2045,7 +2070,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2143,7 +2168,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2213,7 +2238,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2228,7 +2253,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2243,7 +2268,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2349,7 +2374,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2437,7 +2462,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2535,7 +2560,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2605,7 +2630,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2620,7 +2645,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -2635,7 +2660,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2668,7 +2693,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2824,7 +2849,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -2912,7 +2937,7 @@ PrefabInstance:
     - target: {fileID: 117116869736755061, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 4262329509903519747, guid: cf7993c1f6622454c949412e4b0900f1,
         type: 3}
@@ -3084,7 +3109,7 @@ PrefabInstance:
     - target: {fileID: 1419282546276068956, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 1598009555868609508, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -3154,7 +3179,7 @@ PrefabInstance:
     - target: {fileID: 5427452796712222381, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -3169,7 +3194,7 @@ PrefabInstance:
     - target: {fileID: 5553295992581029844, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
@@ -3184,7 +3209,7 @@ PrefabInstance:
     - target: {fileID: 8643446657040842279, guid: 65a8a9c64c144a248a8af65aeabb6726,
         type: 3}
       propertyPath: layersToHit.m_Bits
-      value: 0
+      value: 4864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
