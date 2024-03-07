@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 3685875624082777353}
   - component: {fileID: 7837679626123667394}
   - component: {fileID: 8514825660368413956}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bouncyness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
