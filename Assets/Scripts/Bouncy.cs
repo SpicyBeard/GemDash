@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using AGDDPlatformer;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Bouncy : MonoBehaviour
 {   
-        public float cooldown = 1;
         private AudioSource audioSource;
         public AudioClip bounceSound;
 
@@ -23,6 +23,26 @@ public class Bouncy : MonoBehaviour
     {
 
         }
+
+        void OnTriggerStay2D(Collider2D other)
+        {   
+            PlayerController playerController = other.GetComponentInParent<PlayerController>();
+            if (playerController != null)
+            {
+                if (playerController.canBounce)
+                {
+                    playerController.canDash = false;
+                    StartCoroutine(DisableBounce(playerController, 1f)); // Disable bouncing after a delay
+                    audioSource.PlayOneShot(bounceSound);
+                        }
+            }
+        }
+        IEnumerator DisableBounce(PlayerController playerController, float delay)
+        {
+            playerController.Bounce(10); // Call the Bounce method
+            yield return new WaitForSeconds(delay);
+            playerController.canBounce = false;
+        }
            void OnTriggerEnter2D(Collider2D other)
         {
             
@@ -30,17 +50,10 @@ public class Bouncy : MonoBehaviour
             if (playerController != null)
             {   
                 Debug.Log("Bouncy");
-                if(playerController.canBounce)
+                if(playerController.canBounce )
                 {
-                Debug.Log("Bouncing!");
                 playerController.canDash = false;
-                Vector2 desiredBounceDirection = new Vector2();
-                //bounce upward
-                desiredBounceDirection = Vector2.up;
-                playerController.velocity = ((desiredBounceDirection * playerController.dashSpeed)/2); 
-                playerController.velocity.y += playerController.jumpSpeed;
-                playerController.velocity.y -= Time.deltaTime;
-                playerController.canBounce= false;
+                playerController.Bounce(playerController.dashSpeed ); // Call the Bounce method
                 audioSource.PlayOneShot(bounceSound);
                 }
             }

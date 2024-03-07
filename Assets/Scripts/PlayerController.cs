@@ -66,19 +66,16 @@ namespace AGDDPlatformer
 
             defaultGravityModifier = gravityModifier;
         }
-        
-        IEnumerator SlamDelay(){
-            gravityModifier = 0;
 
-            Debug.Log("Slam Delay");
-            yield return new WaitForSeconds(1.0f);
-            
+        public void Bounce(float bounceForce){
+            velocity.y = bounceForce;
+            canBounce = false;
         }
 
         void Update()
         {
             isFrozen = GameManager.instance.timeStopped;
-
+            isSlaming = false;
             /* --- Read Input --- */
 
             move.x = Input.GetAxisRaw("Horizontal");
@@ -135,6 +132,7 @@ namespace AGDDPlatformer
                 isSlaming = true;
                 slamDirection = desiredSlamDirection;
                 canSlam = false;
+                
                 gravityModifier = 0;
                 //source.PlayOneShot(slamSound);
             }
@@ -143,10 +141,6 @@ namespace AGDDPlatformer
             GetComponent<TrailRenderer>().enabled = false;
             if(isSlaming)
             {   
-                startSlam = Time.time;
-                isFrozen = true;
-                StartCoroutine(SlamDelay());
-                isFrozen = false;
                 GetComponent<TrailRenderer>().enabled = true;
                 velocity = slamDirection * dashSpeed;
                 canBounce = true;
@@ -167,6 +161,7 @@ namespace AGDDPlatformer
                 
                 //make player slam down at a faster speed
             }
+            isSlaming = false;
 
             /* --- Compute Velocity --- */
 
@@ -201,13 +196,53 @@ namespace AGDDPlatformer
             {
                 if (isGrounded)
                 {   
-                    canBounce = false;
+                    
 
                     // Store grounded time to allow for late jumps
                     lastGroundedTime = Time.time;
                     canJump = true;
-                    if (!isDashing && Time.time - lastDashTime >= dashCooldown)
+                    if (!isDashing && Time.time - lastDashTime >= dashCooldown){
                         canDash = true;
+                    }
+                    
+                    if (Input.GetButtonDown("Slam"))
+                    {
+                        if(Input.GetAxis("Vertical") < 0){
+                        wantsToSlam = true;
+                        }
+                    }
+                    // Debug.Log(wantsToSlam);
+                    if (canSlam && wantsToSlam)
+                    {
+                        isSlaming = true;
+                        slamDirection = desiredSlamDirection;
+                        canSlam = false;
+                        gravityModifier = 0;
+                        //source.PlayOneShot(slamSound);
+                    }
+
+                    GetComponent<TrailRenderer>().enabled = false;
+                    if(isSlaming)
+                    {   
+
+                        GetComponent<TrailRenderer>().enabled = true;
+                        velocity = slamDirection * dashSpeed;
+                        //if player is grounded, reset slam
+                        canBounce = true;
+
+                            gravityModifier = defaultGravityModifier;
+                            if ((gravityModifier >= 0 && velocity.y > 0) ||
+                                (gravityModifier < 0 && velocity.y < 0))
+                            {
+                                velocity.y /= 4* jumpDeceleration;
+                            }
+                        spriteRenderer.color = canSlamColor;
+                        Debug.Log("Slamming");
+                        isSlaming = false;
+                        
+                        //make player slam down at a faster speed
+                    }
+                    
                 }
 
                 // Check time for buffered jumps and late jumps
@@ -230,6 +265,7 @@ namespace AGDDPlatformer
                     {
                         velocity.y *= jumpDeceleration;
                     }
+                    canBounce = false;
                     jumpReleased = false;
                 }
 
