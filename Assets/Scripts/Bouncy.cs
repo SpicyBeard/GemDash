@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using AGDDPlatformer;
-using UnityEditor.Callbacks;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Bouncy : MonoBehaviour
 {   
