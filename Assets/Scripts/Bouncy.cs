@@ -24,7 +24,7 @@ public class Bouncy : MonoBehaviour
 
         }
 
-        void OnTriggerStay2D(Collider2D other)
+       /* void OnTriggerStay2D(Collider2D other)
         {   
             PlayerController playerController = other.GetComponentInParent<PlayerController>();
             if (playerController != null)
@@ -42,8 +42,8 @@ public class Bouncy : MonoBehaviour
             playerController.Bounce(10); // Call the Bounce method
             yield return new WaitForSeconds(delay);
             playerController.canBounce = false;
-        }
-           void OnTriggerEnter2D(Collider2D other)
+        }*/
+        void OnTriggerEnter2D(Collider2D other)
         {
             
          PlayerController playerController = other.GetComponentInParent<PlayerController>();
